@@ -1,0 +1,290 @@
+html, body{
+    width: 100%;
+    height:100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+.hidden{
+    display: none;
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.title{
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    background: #1e1b26;
+    z-index: 1;
+    border-bottom: 1px solid #2a2634;
+}
+
+.body{
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.chatBox{
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    right: 0;
+    background-color: #191621;
+}
+
+.chatMain{
+    position: absolute;
+    top: 60px;
+    bottom: 100px;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#chatSwitchInput{
+    display: none;
+}
+
+.chatSwitch{
+    position: absolute;
+    z-index: 2;
+    height: 50px;
+    width: 15px;
+
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-color: #322e3c;
+    background-image: url("../image/xy.png");
+    background-repeat: no-repeat;
+    background-size: 9px auto;
+    background-position: 3px center;
+
+}
+
+.chatSwitch:hover{
+    background-color: #433f4b;
+}
+
+#chatSwitchInput:checked ~ .redeBox{
+    right: 0;
+}
+#chatSwitchInput:checked ~ .chatBox{
+    width: 0;
+}
+#chatSwitchInput:checked ~ .chatBox .chatSwitch{
+    left: auto;
+    right: 0;
+    background-image: url("../image/xz.png");
+    border-radius: 2px 0 0 2px;
+}
+
+
+
+.chatTitle{
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    background: #221e2c;
+    line-height: 60px;
+    text-align: center;
+    font-size: 14px;
+    color: #555555;
+}
+
+.chatTitle label{
+    width: 140px;
+    margin: 0;
+    padding: 0;
+    float: left;
+    color: #eeeeee;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chatTitle p{
+    width: 20px;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.chatTitle input{
+    display: none;
+}
+
+#tab-radio1:checked ~ label[id*="label1"]{
+    color: #3374ac;
+}
+
+#tab-radio2:checked ~ label[id*="label2"]{
+    color: #3374ac;
+}
+
+.chatMessage{
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.chatMessage{
+    width: 100%;
+    word-break: normal;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.chatBottom{
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    bottom: 0;
+}
+
+.chatBottomFunction{
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    top: 0;
+    background-color: #2e2a39;
+}
+
+.chatBottomInput{
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    width: 100%;
+}
+
+.chatBottomInput form{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.chatBottomInputSubmit{
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    right: 10px;
+    width: 50px;
+    background: #22639b;
+    padding: 0;
+    border:0;
+    margin: 0;
+    outline: none;
+    color: #ffffff;
+    border-radius: 3px;
+}
+.chatBottomInputSubmit:hover{
+    background: #16578f;
+}
+
+.chatBottomInputText{
+    position: absolute;
+    display: block;
+    top: 15px;
+    bottom: 15px;
+    left: 10px;
+    width: 215px;
+    outline: none;
+    padding: 0 5px;
+    border:0;
+    margin: 0;
+    color: #ffffff;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.1);
+}
+
+.redeBox{
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 300px;
+    background: #1e1b24;
+}
+
+.videoBox{
+    position: absolute;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    border-left: 1px solid #2a2634;
+    background-color: #1e1b26;
+}
+
+.videoMain{
+    position: absolute;
+    top: 0;
+    height: 250px;
+    width: 100%;
+    background: #2a2634;
+}
+
+.videoMain video{
+    width: 100%;
+}
+
+.pdfNavigation{
+    position: absolute;
+    top: 250px;
+    bottom: 0;
+    width: 100%;
+}
+
+.pdfBox{
+    position: absolute;
+    left: 0;
+    right: 300px;
+    height: 100%;
+    background: #2e2a39;
+}
+
+.pdfBox_bottom{
+    position: absolute;
+    bottom: 0;
+    height: 90px;
+    width: 100%;
+}
+
+.pafMain{
+    position: absolute;
+    top: 0;
+    bottom: 90px;
+    width: 100%;
+    background: #1e1b24;
+}
+
+div::-webkit-scrollbar{
+    background: rgba(0,0,0,0.5);
+}
+
+div::-webkit-scrollbar-thumb{
+    background: rgba(255,255,255,0.25);
+    border-radius: 3px;
+}
+
+div::-webkit-scrollbar-thumb:hover{
+    background: rgba(255,255,255,0.2);
+}
+
+
+div::-webkit-scrollbar-button{
+    background: rgba(255,255,255,0.2);
+}
+div::-webkit-scrollbar-button:hover{
+    background: rgba(255,255,255,0.15);
+}
