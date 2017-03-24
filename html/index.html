@@ -14,13 +14,14 @@
     <script src="../javascript/l10n.js"></script>
     <script src="../javascript/pdf.js"></script>
     <script src="../javascript/viewer.js"></script>
+    <script src="../javascript/vue.js"></script>
 </head>
 <body>
 <div class="main">
     <div class="title"></div>
     <div class="body">
         <input id="chatSwitchInput" type="checkbox"/>
-        <div class="chatBox">
+        <div id="chatBox" class="chatBox">
 
             <label for="chatSwitchInput" class="chatSwitch"></label>
             <div class="chatTitle">
@@ -34,16 +35,19 @@
                     提问
                 </label>
             </div>
-            <div class="chatMain"></div>
-            <div class="chatBottom">
-                <div class="chatBottomFunction">
-
+            <div class="chatMain">
+                <div class="chatMessage" v-for="item in messageList">
+                    <p>{{nickname(item)}}:{{item.message.message}}</p>
                 </div>
+            </div>
+            <div class="chatBottom">
+                <div class="chatBottomFunction"></div>
                 <div class="chatBottomInput">
-                    <form action="" onsubmit="return submitMessage()" autocomplete="off">
-                        <input id="chatBottomInputText" class="chatBottomInputText" type="text" placeholder="请输入聊天内容.."/>
-                        <input class="chatBottomInputSubmit" type="button" value="发送"/>
-                    </form>
+
+                    <input autoComplete= "Off "  id="chatBottomInputText" v-model="message" class="chatBottomInputText"
+                           type="text" placeholder="请输入聊天内容.." v-on:keydown.enter="sendMessage()"/>
+                    <input class="chatBottomInputSubmit" type="button" value="发送" v-on:click="sendMessage()"/>
+
                 </div>
             </div>
         </div>
